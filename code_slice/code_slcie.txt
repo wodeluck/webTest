@@ -1,0 +1,497 @@
+/////////////////////////////////
+http://idea.qinxi1992.cn/  webstorm激活
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+
+var update_wx_title = function(title) {
+    var body = document.getElementsByTagName('body')[0];
+    document.title = title;
+    var iframe = document.createElement("iframe");
+    iframe.setAttribute("src", "/empty.png");
+
+    iframe.addEventListener('load', function() {
+        setTimeout(function() {
+            iframe.removeEventListener('load');
+            document.body.removeChild(iframe);
+        }, 0);
+    });
+    document.body.appendChild(iframe);
+};
+
+微信ios端改title
+
+
+    document.addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+
+
+ $(vio).attr("webkit-playsinline", ''); 禁止全屏播放视屏
+
+
+
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="5;url=" />
+<link rel="copyright" href="copyright.html" 　/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="150 words" />
+<meta name="keywords" content="your tags" />
+<!--
+    all：文件将被检索，且页面上的链接可以被查询；
+    none：文件将不被检索，且页面上的链接不可以被查询；
+    index：文件将被检索；
+    follow：页面上的链接可以被查询；
+    noindex：文件将不被检索；
+    nofollow：页面上的链接不可以被查询。
+ -->
+<meta name="robots" content="index,follow" />
+<meta name="author" content="author name" />
+<meta name="google" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="verify" content="index,follow" />
+<!-- 启用 WebApp 全屏模式 -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- 隐藏状态栏/设置状态栏颜色：只有在开启WebApp全屏模式时才生效。content的值为default | black | black-translucent 。 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<!-- 添加到主屏后的标题 -->
+<meta name="apple-mobile-web-app-title" content="标题">
+<!-- 忽略数字自动识别为电话号码 -->
+<meta content="telephone=no" name="format-detection" />
+<!-- 忽略识别邮箱 -->
+<meta content="email=no" name="format-detection" />
+<meta name="apple-itunes-app" content="app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL" />
+<!-- 添加智能 App 广告条 Smart App Banner：告诉浏览器这个网站对应的app，并在页面上显示下载banner:https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html -->
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- 微软的老式浏览器 -->
+<meta name="MobileOptimized" content="320">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+
+
+阻止ios滑动
+$('body').on('touchstart touchmove touchcancel touchend', function(e) {
+    e.stopPropagation()
+});
+
+
+
+$(document).on('touchmove', function(e) {
+    e.preventDefault();
+}).ready(function() {
+    $(".scrollable").on('touchstart', function(e) {
+        console.log('qqq');
+        this.allowUp = (this.scrollTop > 0);
+        this.allowDown = (this.scrollTop < this.scrollHeight - this.clientHeight);
+        this.prevTop = null;
+        this.prevBot = null;
+        this.lastY = e.originalEvent.pageY;
+    }).on('touchmove', function(e) {
+        var event = e.originalEvent;
+        var up = (event.pageY > this.lastY), down = !up;
+        this.lastY = event.pageY;
+
+        if ((up && this.allowUp) || (down && this.allowDown))
+            event.stopPropagation();
+        else
+            event.preventDefault();
+    });
+});
+
+
+
+     CSS3控制多行溢出
+       white-space:normal;
+       -webkit-line-clamp:3;  //表限制三行
+       display:-webkit-box;
+       overflow: hidden;
+       text-overflow:ellipsis;
+       -webkit-box-orient: vertical;
+
+
+
+
+
+//时间转换
+Date.prototype.pattern = function (fmt) {
+    var o = {
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours() % 12 == 0 ? 12 : this.getHours() % 12, //小时
+        "H+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds(), //秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+        "S": this.getMilliseconds() //毫秒
+    };
+    var week = {
+        "0": "/u65e5",
+        "1": "/u4e00",
+        "2": "/u4e8c",
+        "3": "/u4e09",
+        "4": "/u56db",
+        "5": "/u4e94",
+        "6": "/u516d"
+    };
+    if (/(y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    }
+    if (/(E+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? "/u661f/u671f" : "/u5468") : "") + week[this.getDay() + ""]);
+    }
+    for (var k in o) {
+        if (new RegExp("(" + k + ")").test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        }
+    }
+    return fmt;
+};
+
+function time(ns) {
+    return new Date(parseInt(ns) * 1000).pattern("HH:mm");
+}
+
+function timeDay(ns) {
+    return new Date(parseInt(ns) * 1000).pattern("HH:mm:ss yyyy-MM-dd ").substr(0, 11);
+}
+
+function timeFull(ns) {
+    return new Date(parseInt(ns) * 1000).pattern("yyyy-MM-dd HH:mm:ss");
+}
+
+
+function getLocalTime(nS) {
+    return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+}
+
+
+滚动加载
+//$(window).scroll(function() {
+//    if($(window).scrollTop() == $(document).height() - $(window).height()) {
+//        $('.loadmore:last-child').remove();
+//        // ajax call get data from server and append to the div
+//        var loadmore=document.createElement('div');
+//        loadmore.className='loadmore';
+//        var view2=document.getElementsByClassName('view2')[0];
+//        $(loadmore).appendTo(view2);
+//    }
+//});
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+
+// get a random number integer between two low/high extremes
+function randomFromTo(from, to){
+    return Math.floor(Math.random() * (to - from + 1) + from);
+}
+
+
+
+var code=document.getElementsByClassName('getVerCode')[0];
+//    document.addEventListener("DOMContentLoaded", function(){verificationCode.notClick()}, false);
+var verificationCode= {
+    getCode: function (time) {
+        var i=time;
+        code.classList.add('click');
+        $(code).attr('disabled','disabled');
+        var st=setInterval(function(){
+            i--;
+            code.value=i+'s重新获取';
+            if(i==0){
+                clearInterval(st);
+                code.value='获取验证码';
+                $(code).removeAttr('disabled');
+                code.classList.remove('click');
+            }
+        },1000)
+    },
+    //不可以点击
+    notClick:function(){
+        code.classList.add('click');
+        $(code).attr('disabled','disabled');
+    },
+    //可以点击
+    yesClick:function(){
+        $(code).removeAttr('disabled');
+        code.classList.remove('click');
+    }
+};
+
+验证码倒计时60s
+
+
+function setImgPosition(ele) {
+    var section=$('.'+ele);
+    var targetScale=deviceHeight/deviceWidth;
+    if (targetScale>scale) {
+        var actualWidth=deviceWidth+deviceWidth*(targetScale-scale);
+        section.each(function(){
+            $(this)[0].style.backgroundSize='auto 100%';
+            $(this)[0].style.backgroundPositionX=-(actualWidth-deviceWidth)/2+'px';
+        })
+    } else {
+        var actualHeight=deviceHeight+deviceHeight*(scale-targetScale);
+        section.each(function(){
+            $(this)[0].style.backgroundSize='100% auto';
+            $(this)[0].style.backgroundPositionY=-(actualHeight-deviceHeight)/2+'px';
+        })
+    }
+}
+背景图片居中显示
+
+
+
+
+//重置table样式
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+//重置table样式
+
+//检测客户端类型
+var isMobile = {
+    Windows: function() {
+        return /IEMobile/i.test(navigator.userAgent);
+    },
+    Android: function() {
+        return /Android/i.test(navigator.userAgent);
+    },
+    BlackBerry: function() {
+        return /BlackBerry/i.test(navigator.userAgent);
+    },
+    iOS: function() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+    }
+};
+
+////////////////////////
+
+-webkit-overflow-scrolling: touch;
+
+
+
+
+
+//////////////////////////微信分享
+
+<?php
+include '../class/wx.class.php';
+$m = new Wx();
+$signPackage = $m->getSignPackage();
+?>
+
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<?php if ($m->is_weixin()): ?>
+    <script>
+        imgUrl = "http://h5.h5faner.com/luliang/images/share.jpg";//分享图片
+        lineLink = "http://h5.h5faner.com/luliang";//分享链接
+        shareTitle = '吃货，你的大脑邀请你加入了群聊';//分享标题
+        desc = '微卤和CPIC专门为吃货搞了款保险，你信？';
+        wx.config({
+            debug: false,
+            appId: '<?php echo $signPackage["appId"]; ?>',
+            timestamp: <?php echo $signPackage["timestamp"]; ?>,
+            nonceStr: '<?php echo $signPackage["nonceStr"]; ?>',
+            signature: '<?php echo $signPackage["signature"]; ?>',
+            jsApiList: [
+                'onMenuShareAppMessage',
+                'onMenuShareTimeline',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        });
+        wx.ready(function() {
+            var shareData = {
+                title: shareTitle,
+                desc: desc,
+                link: lineLink,
+                imgUrl: imgUrl
+            };
+            wx.onMenuShareAppMessage(shareData);
+            wx.onMenuShareTimeline(shareData);
+            wx.onMenuShareQQ(shareData);
+            wx.onMenuShareWeibo(shareData);
+
+        });
+        wx.error(function(res) {
+            //alert(res.errMsg);
+        });
+    </script>
+<?php endif; ?>
+
+//////////////////////////微信分享
+
+
+
+
+a, img {
+    -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+html, body {
+    -webkit-user-select: none;   /* 禁止选中文本（如无文本选中需求，此为必选项） */
+    user-select: none;
+}
+
+
+
+
+
+
+var digitUppercase = function(n) {
+    var fraction = ['角', '分'];
+    var digit = [
+        '零', '壹', '贰', '叁', '肆',
+        '伍', '陆', '柒', '捌', '玖'
+    ];
+    var unit = [
+        ['元', '万', '亿'],
+        ['', '拾', '佰', '仟']
+    ];
+    var head = n < 0 ? '欠' : '';
+    n = Math.abs(n);
+    var s = '';
+    for (var i = 0; i < fraction.length; i++) {
+        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+    }
+    s = s || '整';
+    n = Math.floor(n);
+    for (var i = 0; i < unit[0].length && n > 0; i++) {
+        var p = '';
+        for (var j = 0; j < unit[1].length && n > 0; j++) {
+            p = digit[n % 10] + unit[1][j] + p;
+            n = Math.floor(n / 10);
+        }
+        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+    }
+    return head + s.replace(/(零.)*零元/, '元')
+        .replace(/(零.)+/g, '零')
+        .replace(/^整$/, '零元整');
+};
+
+console.log(digitUppercase(7682.01)); //柒仟陆佰捌拾贰元壹分
+console.log(digitUppercase(7682));  //柒仟陆佰捌拾贰元整
+console.log(digitUppercase(951434677682.00)); //玖仟伍佰壹拾肆亿叁仟肆佰陆拾柒万柒仟陆佰捌拾贰元整
+
+
+
+////////////////////////////
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+///////////////////////////
+
+
+//////////////////////////
+   <link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
+
+   <link rel="bookmark" type="image/x-icon" href="favicon.png"/> 书签
+/////////////////////////
+
+
+/////////////////////////
+异步加载
+　　<script src="js/require.js" defer async="true" >
+
+
+////////////////////////////
+合并参数
+        var defaults = {
+            count: 30,
+            velocity: 2,
+            fps: 30,
+            url: 'smoke.png'
+        };
+
+        options = options || {};
+
+        // 参数合并
+        var params = {};
+
+        for (var key in defaults) {
+            params[key] = options[key] || defaults[key];
+        }
+
+
+
+
+//////////////////////////////////////
+禁用微信缓存
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+作者：匿名用户
+链接：https://www.zhihu.com/question/25456655/answer/59013108
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+
+        var browser={
+            versions:function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    webKit: u.indexOf('AppleWebKit') > -1,
+                    ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    weixin: u.indexOf('MicroMessenger') > -1,
+                    txnews: u.indexOf('qqnews') > -1,
+                    sinawb: u.indexOf('weibo') > -1,
+                    mqq   : u.indexOf('QQ') > -1
+                };
+            }(),
+            language:(navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+
+/////////////////////////////////////////
+移动端适配
+<meta name="viewport" content="width=640,target-densitydpi=device-dpi,user-scalable=no" />
+
+
+
+
+window.requestAnimationFrame = this.requestAnimationFrame =  (function() {
+  return window.requestAnimationFrame ||
+		 window.webkitRequestAnimationFrame ||
+		 window.mozRequestAnimationFrame ||
+		 window.oRequestAnimationFrame ||
+		 window.msRequestAnimationFrame ||
+		 function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+		   window.setTimeout(callback, 1000/60);
+		 };
+})();

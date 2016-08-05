@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import "compass/reset";
+@import "compass/css3";
+
+.flexWrap{
+  @include display-flex();
+  height: 300px;
+  //@include flex-direction(column-reverse);
+  //@include flex-wrap(wrap-reverse);
+  //@include flex-flow(row-reverse wrap-reverse);
+  @include justify-content(space-around);
+  @include align-items(center);
+  //@include order();定义项目的排列顺序，数值越小，排列越靠前
+  //@include flex-grow();定义项目的缩放比例
+  //@include flex-shrink();定义项目的缩小比例
+  background:#533fff url("https://ss2.bdstatic.com/kfoZeXSm1A5BphGlnYG/skin/65.jpg?2") no-repeat;
+  background-position: right 10px bottom 20px;
+  @include background-size(100px 100px);
+  //@include filter(blur(200px));
+  >div{
+    height: 200px;
+    &.flex1{
+      background-color: aqua;
+      //@include flex(1);
+      //@include flex-basis();定义在分配多余空间时，项目占据的主轴空间
+      width: 100px;
+    }
+    &.flex2{
+      background-color: #ffd825;
+      //@include flex(2);
+      width: 150px;
+    }
+    &.flex3{
+      background-color: #ff5bf9;
+      //@include flex(3);
+      width: 200px;
+    }
+    &.flex4{
+      background-color: #ff362c;
+      //@include flex(4);
+      width: 250px;
+    }
+  }
+}
