@@ -17,6 +17,7 @@
   background-position: right 10px bottom 20px;
 
   @include background-size(100px 100px);
+
   //@include filter(blur(200px));
   >div{
     height: 200px;
