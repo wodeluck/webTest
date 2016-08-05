@@ -70,7 +70,7 @@
 @include keyframes(yAxis){
   50% {
     @include animation-timing-function(cubic-bezier(0.02, 0.01, 0.21, 1));
-    @include transform(translateY(-400px));
+    @include transform(translateY(-500px));
   }
 }
 
