@@ -15,9 +15,7 @@
   //@include flex-shrink();定义项目的缩小比例
   background:#533fff url("https://ss2.bdstatic.com/kfoZeXSm1A5BphGlnYG/skin/65.jpg?2") no-repeat;
   background-position: right 10px bottom 20px;
-
   @include background-size(100px 100px);
-
   //@include filter(blur(200px));
   >div{
     height: 200px;
