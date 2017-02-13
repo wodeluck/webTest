@@ -21,7 +21,6 @@
     >div{
     height: 200px;
     &.flex1{
-
       background-color: aqua;
       //@include flex(1);
       //@include flex-basis();定义在分配多余空间时，项目占据的主轴空间
